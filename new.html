@@ -1,0 +1,17 @@
+<!-- works only online when deployed (to, say, GitHub Pages).
+     if you want to run locally on your computer, you must start a webserver -->
+
+<!doctype html>
+<html>
+  <head>
+   <script src="js/jquery.js"></script>
+   <script type="text/javascript">
+      localStorage.setItem("showAlternate", "true"); // true for new.html
+      // fetches and renders index.html:
+      $.get("index.html", function (data) {
+         document.open(); document.write(data); document.close();
+         $.cache = {};
+      }, "text");
+   </script>
+  </head>
+</html>
